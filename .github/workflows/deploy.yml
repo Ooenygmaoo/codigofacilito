@@ -8,12 +8,14 @@ jobs:
 
     steps: 
 
-    - name: Hola MUndo
-      run: echo "hola mundo"
+    - name: Hola Mundo
+      run: echo "hola mundos"
   second_job:
+    if: ${{github.ref == 'refs/heads/main'}}
+    needs: first_job
     runs-on: ubuntu-latest
 
     steps: 
 
     - name: Hola MUndo
-      run: echo "hola mundo 2"
+      run: echo "hola mundo22"
